@@ -7,10 +7,10 @@ selection sort;
 Quick sort.
 >> for pro-bono tasks:
 knuth sort;
-cocktail-shaker sort;
+.cocktail-shaker sort;
 counting sort;
-Merge sort;
-Heap sort;
+.Merge sort;
+.Heap sort;
 Radix sort;
 Bitonic sort;
 Hoare-partition scheme of Quick sort
