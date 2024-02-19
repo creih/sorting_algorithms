@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * print_list - Prints a list of integers
+ * print_list - Prints a list of integer
  *
  * @list: The list to be printed
  */

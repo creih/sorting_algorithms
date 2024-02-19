@@ -3,7 +3,7 @@
  * selection_sort - a custom implementation of selection sort
  * @array: this is the array in question
  * @size: this is the size of the function
- * Return: None
+ * Return: None at all
 */
 void selection_sort(int *array, size_t size)
 {
