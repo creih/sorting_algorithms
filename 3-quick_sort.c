@@ -5,13 +5,11 @@
  * @a: Pointer to the first element
  * @b: Pointer to the second element
  */
-void swap(int *one, int *two)
+void swap(int *a, int *b)
 {
-	int temp;
-
-	temp = *one;
-	*one = *two;
-	*two = temp;
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 /**
@@ -47,14 +45,12 @@ int partition(int *array, int low, int high)
  */
 void quicksort(int *array, int low, int high)
 {
-	int pivot;
-
-	if (low < high)
-	{
-		pivot = partition(array, low, high, size);
-		quicksort(array, low, pivot - 1, size);
-		quicksort(array, pivot + 1, high, size);
-	}
+    if (low < high)
+    {
+        int pivot = partition(array, low, high);
+        quicksort(array, low, pivot - 1);
+        quicksort(array, pivot + 1, high);
+    }
 }
 
 /**
