@@ -1,5 +1,3 @@
-nclude <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
 
 /**

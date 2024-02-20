@@ -8,9 +8,9 @@ void swap(int *one, int *two)
 {
 	int temp;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	temp = *one;
+	*one = *two;
+	*two = temp;
 }
 /**
  * partition - divides the array using lomuto
@@ -60,7 +60,7 @@ void quicksort(int *array, int low, int  high, size_t size)
 	{
 		pivot = partition(array, low, high, size);
 		quicksort(array, low, pivot - 1, size);
-		quicksort(array, pivot + 1, high, size);		
+		quicksort(array, pivot + 1, high, size);
 	}
 }
 /**
@@ -73,5 +73,5 @@ void quick_sort(int *array, size_t size)
 {
 	if (array != NULL || size < 2)
 		return;
-	quiocksort(array, 0, size - 1, size);
+	quicksort(array, 0, size - 1, size);
 }
