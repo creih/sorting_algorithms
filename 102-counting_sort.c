@@ -6,30 +6,31 @@
  */
 void counting_sort(int *array, size_t size)
 {
-	int *count, *output;
+	int i, max, *count, *output;
+	size_t ir;
 
-    if (array == NULL || size < 2)
-        return;
-	int max = array[0];
-	for (size_t i = 1; i < size; i++)
+	if (array == NULL || size < 2)
+		return;
+	max = array[0];
+	for (ir = 1; ir < size; ir++)
 	{
-		if (array[i] > max)
-			max = array[i];
+		if (array[ir] > max)
+			max = array[ir];
 	}
 	count = calloc(max + 1, sizeof(int));
 	if (count == NULL)
 		return;
-	for (size_t i = 0; i < size; i++)
+	for (ir = 0; ir < size; ir++)
 	{
-		count[array[i]]++;
+		count[array[ir]]++;
 	}
 	printf("Counting array:");
-	for (int i = 0; i <= max; i++)
+	for (i = 0; i <= max; i++)
 	{
 		printf(" %d", count[i]);
 	}
 	printf("\n");
-	for (int i = 1; i <= max; i++)
+	for (i = 1; i <= max; i++)
 	{
 		count[i] += count[i - 1];
 	}
@@ -39,14 +40,14 @@ void counting_sort(int *array, size_t size)
 		free(count);
 		return;
 	}
-	for (int i = size - 1; i >= 0; i--)
+	for (i = size - 1; i >= 0; i--)
 	{
 		output[count[array[i]] - 1] = array[i];
 		count[array[i]]--;
 	}
-	for (size_t i = 0; i < size; i++)
+	for (ir = 0; ir < size; ir++)
 	{
-		array[i] = output[i];
+		array[ir] = output[ir];
 	}
 	free(count);
 	free(output);
