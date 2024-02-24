@@ -6,7 +6,7 @@
  */
 void counting_sort(int *array, size_t size)
 {
-	int i, *count, max; *output;
+	int i, *count, max, *output;
 	size_t ir;
 
 	if (array == NULL || size < 2)
