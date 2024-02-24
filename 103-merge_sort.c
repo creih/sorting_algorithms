@@ -26,6 +26,16 @@ void merge(int *array, int left, int mid, int right, int *temp)
         temp[k++] = array[j++];
     for (i = left; i <= right; i++)
         array[i] = temp[i];
+    printf("Merging...\n");
+    printf("[left]: ");
+    for (i = left; i <= mid; i++)
+        printf("%d%s", array[i], (i == mid) ? "\n" : ", ");
+    printf("[right]: ");
+    for (i = mid + 1; i <= right; i++)
+        printf("%d%s", array[i], (i == right) ? "\n" : ", ");
+    printf("[Done]: ");
+    for (i = left; i <= right; i++)
+        printf("%d%s", array[i], (i == right) ? "\n" : ", ");
 }
 /**
  * merge_sort_recursive - Recursive function to sort the array using Merge sort
@@ -41,6 +51,7 @@ void merge_sort_recursive(int *array, int left, int right, int *temp)
     if (left < right)
     {
         mid = left + (right - left) / 2;
+
         merge_sort_recursive(array, left, mid, temp);
         merge_sort_recursive(array, mid + 1, right, temp);
         merge(array, left, mid, right, temp);
