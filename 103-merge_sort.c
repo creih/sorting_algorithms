@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "sort.h"
 /**
  * merge - Merges two subarrays of array[].
  * @array: Pointer to the array
